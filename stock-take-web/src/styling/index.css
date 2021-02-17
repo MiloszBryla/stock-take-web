@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding: 30px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -13,4 +14,28 @@ body {
 
 .links{
   margin: 30px 20px;
+}
+
+.cars-list {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+  margin-left: 30px;
+}
+
+.cars-list td, .cars-list th{
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.cars-list tr:nth-child(even){background-color: #f2f2f2;}
+
+.cars-list tr:hover {background-color: #ddd;}
+
+.cars-list th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
 }
