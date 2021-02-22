@@ -172,3 +172,21 @@ body {
   position:relative;
   top:1px;
 }
+
+.form-group{
+  padding: 10px;
+}
+
+.form-control{
+  border-radius: 10px;
+  padding: 10px;
+  color: black;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+}

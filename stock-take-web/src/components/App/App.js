@@ -6,6 +6,7 @@ import Switch from "react-router-dom/es/Switch";
 import Cars from "../CRUD-menus/Cars";
 import Users from "../CRUD-menus/Users";
 import Reservations from "../CRUD-menus/Reservations";
+import AddUser from "../CRUD-menus/AddUser";
 
 function App() {
     return (
@@ -15,7 +16,9 @@ function App() {
                     <Route path="/cars" component = {Cars}/>
                     <Route path="/users" component = {Users}/>
                     <Route path="/reservations" component = {Reservations}/>
+                    <Route path="/add-user" exact component = {AddUser}/>
                     <Route path="*" exact component = {LandingPage}/>
+
                 </Switch>
             </div>
         </Router>
