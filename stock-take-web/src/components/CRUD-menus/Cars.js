@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import "../../styling/index.css"
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
+import {Button, ButtonGroup} from "reactstrap";
 
 function Cars() {
 
@@ -16,13 +17,31 @@ function Cars() {
         console.log(cars);
         setCars(cars);
     }
+    async function remove(id) {
+        await fetch(`http://localhost:8080/api/users/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        })
+    }
+
+    const refreshPage = ()=>{
+        window.location.reload();
+    }
+
+
 
     useEffect(() => {fetchCars()}, []);
 
     return (
         <div>
-            <span><NavLink to={"/"}>&lt; back</NavLink></span>
+            <span><NavLink to={"/"} className={"previous"}>&laquo; Back</NavLink></span>
             <h4 className={"title"}>CARS</h4>
+
+            <Button className={"addButton"} size="sm" >Add new car</Button>
+
             <table className="cars-list">
                 <tr>
                     <th>ID</th>
@@ -31,15 +50,22 @@ function Cars() {
                     <th>IS RENT</th>
                     <th>SERVICE</th>
                     <th>FUEL</th>
+                    <th> </th>
                 </tr>
-                {fetchedCars.map(theCar => (
+                {fetchedCars.map(car => (
                     <tr>
-                        <td>{theCar.id}</td>
-                        <td>{theCar.brandName}</td>
-                        <td>{theCar.carId}</td>
-                        <td>{theCar.rent}</td>
-                        <td>{theCar.service}</td>
-                        <td>{theCar.fuel}</td>
+                        <td>{car.id}</td>
+                        <td>{car.brandName}</td>
+                        <td>{car.carId}</td>
+                        <td>{car.rent}</td>
+                        <td>{car.service}</td>
+                        <td>{car.fuel}</td>
+                        <td>
+                            <ButtonGroup>
+                                <Button className={"editButton"}size="sm" color="danger" tag={Link} to={"/groups/" + car.id}>Edit</Button>
+                                <Button className={"deleteButton"} size="sm" color="danger" onClick={function(){ remove(car.id); refreshPage()}}>Delete</Button>
+                            </ButtonGroup>
+                        </td>
                     </tr>
                     ))}
             </table>

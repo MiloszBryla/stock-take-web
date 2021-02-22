@@ -42,7 +42,7 @@ function Users() {
 
     return (
         <div>
-            <span><NavLink to={"/"}>&lt; back</NavLink></span>
+            <span><NavLink to={"/"} className={"previous"}>&laquo; Back</NavLink></span>
 
             <h4 className={"title"}>USERS</h4>
 
