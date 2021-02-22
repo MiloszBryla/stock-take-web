@@ -46,7 +46,7 @@ function Users() {
 
             <h4 className={"title"}>USERS</h4>
 
-            <Button className={"addButton"} size="sm" >Add new user</Button>
+            <NavLink to={"/add-user"}><Button className={"addButton"} size="sm" >Add new user</Button></NavLink>
 
             <table className="cars-list">
                 <tr>

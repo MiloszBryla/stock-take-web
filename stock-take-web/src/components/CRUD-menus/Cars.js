@@ -18,7 +18,7 @@ function Cars() {
         setCars(cars);
     }
     async function remove(id) {
-        await fetch(`http://localhost:8080/api/users/${id}`, {
+        await fetch(`http://localhost:8080/api/cars/${id}`, {
             method: 'DELETE',
             headers: {
                 'Accept': 'application/json',
