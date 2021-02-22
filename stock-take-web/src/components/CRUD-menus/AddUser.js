@@ -2,6 +2,7 @@ import React from 'react';
 import "../../styling/index.css"
 import {NavLink} from "react-router-dom";
 import {useForm} from "react-hook-form";
+import {Button} from "reactstrap";
 
 
 function AddUser() {
@@ -38,7 +39,7 @@ function AddUser() {
                 <span><NavLink to={"/users"} className={"previous"}>&laquo; Back</NavLink></span>
 
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <h3>Add new user</h3>
+                    <h4>Add new user</h4>
                     <div className="form-group">
                         <input type="text" className="form-control" name="firstName" ref={register} placeholder="First name"/>
                     </div>
