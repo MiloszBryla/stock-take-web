@@ -28,18 +28,18 @@ function Reservations() {
                 method: 'GET',
             });
         const reservations = await response.json();
-        console.log(reservations);
         setReservation(reservations);
+
+
     }
 
     useEffect(() => {fetchReservations()}, []);
-
 
     return (
         <div>
             <span><NavLink to={"/"} className={"previous"}>&laquo; Back</NavLink></span>
             <h4 className={"title"}>RESERVATIONS</h4>
-            <Button className={"addButton"} size="sm" >Add new reservation</Button>
+            <NavLink to={"/add-reservation"}><Button className={"addButton"} size="sm" >Add new reservation</Button></NavLink>
 
             <table className="cars-list">
                 <tr>

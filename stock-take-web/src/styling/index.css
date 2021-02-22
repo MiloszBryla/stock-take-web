@@ -66,6 +66,7 @@ body {
   border-collapse: collapse;
   width: 70%;
   margin-left: 30px;
+
 }
 
 .cars-list td, .cars-list th{
@@ -96,6 +97,8 @@ body {
 .add:hover{
   color: forestgreen;
 }
+
+
 .deleteButton {
   box-shadow:inset 0px 1px 0px 0px #f7c5c0;
   background:linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
@@ -181,6 +184,8 @@ body {
   border-radius: 10px;
   padding: 10px;
   color: black;
+  width: 12%;
+  border-width: 3px;
 }
 
 form{
@@ -189,4 +194,12 @@ form{
   justify-content: center;
   text-align: center;
 
+}
+
+.drop-selector{
+  border-radius: 10px;
+  padding: 10px;
+  color: black;
+  width: 14%;
+  border-width: 3px;
 }

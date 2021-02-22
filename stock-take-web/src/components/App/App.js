@@ -8,6 +8,7 @@ import Users from "../CRUD-menus/Users";
 import Reservations from "../CRUD-menus/Reservations";
 import AddUser from "../CRUD-menus/AddUser";
 import AddFile from "../CRUD-menus/AddFile";
+import AddReservation from "../CRUD-menus/AddReservation";
 
 function App() {
     return (
@@ -19,6 +20,9 @@ function App() {
                     <Route path="/reservations" component = {Reservations}/>
                     <Route path="/add-user" exact component = {AddUser}/>
                     <Route path="/add-car" exact component = {AddFile}/>
+                    <Route path="/add-reservation" exact component = {AddReservation}/>
+
+
                     <Route path="*" exact component = {LandingPage}/>
 
                 </Switch>
