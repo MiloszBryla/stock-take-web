@@ -3,12 +3,13 @@ import {BrowserRouter as Router} from "react-router-dom";
 import LandingPage from "../LandingPage/LandingPage";
 import Route from "react-router-dom/es/Route";
 import Switch from "react-router-dom/es/Switch";
-import Cars from "../CRUD-menus/Cars";
-import Users from "../CRUD-menus/Users";
-import Reservations from "../CRUD-menus/Reservations";
-import AddUser from "../CRUD-menus/AddUser";
-import AddFile from "../CRUD-menus/AddFile";
-import AddReservation from "../CRUD-menus/AddReservation";
+import Cars from "../CRUD-menus/Car/Cars";
+import Users from "../CRUD-menus/User/Users";
+import Reservations from "../CRUD-menus/Reservation/Reservations";
+import AddUser from "../CRUD-menus/User/AddUser";
+import AddCar from "../CRUD-menus/Car/AddCar";
+import AddReservation from "../CRUD-menus/Reservation/AddReservation";
+import EditCar from "../CRUD-menus/Car/EditCar";
 
 function App() {
     return (
@@ -19,7 +20,8 @@ function App() {
                     <Route path="/users" component = {Users}/>
                     <Route path="/reservations" component = {Reservations}/>
                     <Route path="/add-user" exact component = {AddUser}/>
-                    <Route path="/add-car" exact component = {AddFile}/>
+                    <Route path="/add-car" exact component = {AddCar}/>
+                    <Route path="/edit-car/:id" exact component = {EditCar}/>
                     <Route path="/add-reservation" exact component = {AddReservation}/>
 
 

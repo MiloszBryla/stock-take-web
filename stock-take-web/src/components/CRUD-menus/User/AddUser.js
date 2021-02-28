@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../styling/index.css"
+import "../../../styling/index.css"
 import {NavLink} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {Button} from "reactstrap";
