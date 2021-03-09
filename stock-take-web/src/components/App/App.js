@@ -10,6 +10,7 @@ import AddUser from "../CRUD-menus/User/AddUser";
 import AddCar from "../CRUD-menus/Car/AddCar";
 import AddReservation from "../CRUD-menus/Reservation/AddReservation";
 import EditCar from "../CRUD-menus/Car/EditCar";
+import EditUser from "../CRUD-menus/User/EditUser";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/add-user" exact component = {AddUser}/>
                     <Route path="/add-car" exact component = {AddCar}/>
                     <Route path="/edit-car/:id" exact component = {EditCar}/>
+                    <Route path="/edit-user/:id" exact component = {EditUser}/>
                     <Route path="/add-reservation" exact component = {AddReservation}/>
 
 

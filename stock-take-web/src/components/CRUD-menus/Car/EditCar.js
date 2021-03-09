@@ -18,7 +18,7 @@ function EditCar({match}) {
             });
         const car = await response.json();
         setCar(car);
-        console.log(car);
+
     }
 
     const fetchReservations = async () => {
@@ -31,7 +31,9 @@ function EditCar({match}) {
         console.log(reservations);
     }
 
-    useEffect(() => {fetchCar(); fetchReservations()}, []);
+
+
+    useEffect(() => {fetchCar();}, []);
 
     const onSubmit = (data) => {
         data.carId = car.id;
@@ -42,13 +44,20 @@ function EditCar({match}) {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data),
+            body:
+                JSON.stringify({
+                    id: car.id,
+                    manufacturer: data.manufacturer,
+                    model: data.model,
+                    registration: data.registration,
+                    tankPercentage: data.tankPercentage,
+                    pricePerHour: data.pricePerHour,
+                }),
         }).then((response) => {
-            if(response.status === 200){
+            if(response.status === 204){
                 refreshPage();
-                console.log(response)
+                console.log(response);
             } else{
-                refreshPage();
                 console.log("something went wrong");
             }
         })
@@ -63,7 +72,8 @@ function EditCar({match}) {
             <span><NavLink to={"/cars"} className={"previous"}>&laquo; Back</NavLink></span>
 
             <form onSubmit={handleSubmit(onSubmit)}>
-                <h4>Edit form for car ID: {car.id}</h4>
+                <h4>Edit car:  {car.id}</h4>
+
 
                 <div className="form-group">
                     <label htmlFor={"manufacturer"} className={"form-label"}>Manufacturer</label><br/>

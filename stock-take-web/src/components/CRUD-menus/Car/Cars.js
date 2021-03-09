@@ -13,7 +13,6 @@ function Cars() {
                 method: 'GET',
             });
         const cars = await response.json();
-        console.log(cars.isServiceRequired);
         setCars(cars);
     }
     async function remove(id) {
