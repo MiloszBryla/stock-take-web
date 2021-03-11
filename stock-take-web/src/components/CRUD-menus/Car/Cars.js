@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import "../../styling/index.css"
+import "../../../styling/index.css"
 import {Link, NavLink} from "react-router-dom";
 import {Button, ButtonGroup} from "reactstrap";
 
@@ -8,13 +8,11 @@ function Cars() {
     const [fetchedCars, setCars] = useState([]);
 
     const fetchCars = async () => {
-
         const response = await fetch(`http://localhost:8080/api/cars`,
             {
                 method: 'GET',
             });
         const cars = await response.json();
-        console.log(cars);
         setCars(cars);
     }
     async function remove(id) {
@@ -40,29 +38,33 @@ function Cars() {
             <span><NavLink to={"/"} className={"previous"}>&laquo; Back</NavLink></span>
             <h4 className={"title"}>CARS</h4>
 
-            <NavLink to={"/add-car"} ><Button className={"addButton"} size="sm" >Add new car</Button></NavLink>
+            <NavLink to={"/add-car"} ><Button className={"addButton"} size="sm" >+</Button></NavLink>
 
             <table className="cars-list">
                 <tr>
                     <th>ID</th>
                     <th>MANUFACTURER</th>
+                    <th>MODEL</th>
                     <th>REGISTRATION</th>
                     <th>IS RENT</th>
-                    <th>SERVICE</th>
                     <th>FUEL</th>
+                    <th>SERVICE</th>
+                    <th>PRICE PRE HOUR</th>
                     <th> </th>
                 </tr>
                 {fetchedCars.map(car => (
                     <tr>
                         <td>{car.id}</td>
-                        <td>{car.brandName}</td>
-                        <td>{car.carId}</td>
-                        <td>{car.rent}</td>
-                        <td>{car.service}</td>
-                        <td>{car.fuel}</td>
+                        <td>{car.manufacturer}</td>
+                        <td>{car.model}</td>
+                        <td>{car.registration}</td>
+                        <td>(coming soon)</td>
+                        <td>{car.tankPercentage} %</td>
+                        <td>{car.isServiceRequired.toString()}</td>
+                        <td>{car.pricePerHour} $</td>
                         <td>
                             <ButtonGroup>
-                                <Button className={"editButton"}size="sm" color="danger" tag={Link} to={"/groups/" + car.id}>Edit</Button>
+                                <Button className={"editButton"}size="sm" color="danger" tag={Link} to={"/edit-car/" + car.id}>Edit</Button>
                                 <Button className={"deleteButton"} size="sm" color="danger" onClick={function(){ remove(car.id); refreshPage()}}>Delete</Button>
                             </ButtonGroup>
                         </td>
