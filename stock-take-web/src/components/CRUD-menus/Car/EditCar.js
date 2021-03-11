@@ -77,17 +77,17 @@ function EditCar({match}) {
 
                 <div className="form-group">
                     <label htmlFor={"manufacturer"} className={"form-label"}>Manufacturer</label><br/>
-                    <input type="text" className="form-control" name="manufacturer" ref={register} placeholder={car.manufacturer}/>
+                    <input type="text" className="form-control" name="manufacturer" ref={register} defaultValue={car.manufacturer}/>
                 </div>
 
                 <div className="form-group">
                     <label htmlFor={"model"} className={"form-label"}>Model</label><br/>
-                    <input type="text" className="form-control" name="model" ref={register} placeholder={car.model}/>
+                    <input type="text" className="form-control" name="model" ref={register} defaultValue={car.model}/>
                 </div>
 
                 <div className="form-group">
                     <label htmlFor={"registration"} className={"form-label"}>Registration</label><br/>
-                    <input type="text" className="form-control" name="registration" ref={register} placeholder={car.registration}/>
+                    <input type="text" className="form-control" name="registration" ref={register} defaultValue={car.registration}/>
                 </div>
 
                 <div className="form-group">
@@ -100,11 +100,11 @@ function EditCar({match}) {
 
                 <div className="form-group">
                     <label htmlFor="isServiceRequired">Tank fill in %</label><br/>
-                    <input type="number" className="form-control" name="tankPercentage" ref={register} placeholder={car.tankPercentage}/>
+                    <input type="number" className="form-control" name="tankPercentage" ref={register} defaultValue={car.tankPercentage}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="isServiceRequired">Price per hour</label><br/>
-                    <input type="number" className="form-control" name="pricePerHour" ref={register} placeholder={car.pricePerHour}/>
+                    <input type="number" className="form-control" name="pricePerHour" ref={register} defaultValue={car.pricePerHour}/>
                 </div>
 
                 <button type="submit" className="addButton">SAVE CHANGES</button>
