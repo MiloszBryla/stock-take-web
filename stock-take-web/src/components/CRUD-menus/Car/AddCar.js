@@ -1,11 +1,11 @@
 import React from 'react';
-import "../../styling/index.css"
+import "../../../styling/index.css"
 import {NavLink} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {Button} from "reactstrap";
 
 
-function AddFile() {
+function AddCar() {
 
     const { register, handleSubmit } = useForm();
 
@@ -42,23 +42,31 @@ function AddFile() {
                 <h4>Add new car</h4>
 
                 <div className="form-group">
-                    <input type="text" className="form-control" name="brandName" ref={register} placeholder="Brand/name"/>
+                    <input type="text" className="form-control" name="manufacturer" ref={register} placeholder="Manufacturer"/>
                 </div>
 
                 <div className="form-group">
-                    <input type="text" className="form-control" name="carId" ref={register} placeholder="Registration number"/>
+                    <input type="text" className="form-control" name="model" ref={register} placeholder="Model"/>
                 </div>
 
                 <div className="form-group">
-                    <input type="text" className="form-control" name="rent"  ref={register} placeholder="Already rented?"/>
+                    <input type="text" className="form-control" name="registration" ref={register} placeholder="Registration"/>
                 </div>
 
                 <div className="form-group">
-                    <input type="text" className="form-control" name="service" ref={register} placeholder="Require service?"/>
+                    <label htmlFor="isServiceRequired">Is Service Required</label><br/><br/>
+                    <select name="isServiceRequired" ref={register}>
+                        <option value="False">False</option>
+                        <option value="True">True</option>
+                    </select>
                 </div>
 
                 <div className="form-group">
-                    <input type="text" className="form-control" name="fuel"  ref={register} placeholder="Fuel level (%)"/>
+                    <input type="number" className="form-control" name="tankPercentage" ref={register} placeholder="Tank fill in %"/>
+                </div>
+
+                <div className="form-group">
+                    <input type="number" className="form-control" name="pricePerHour" ref={register} placeholder="Price per hour"/>
                 </div>
 
                 <button type="submit" className="addButton">ADD NEW CAR</button>
@@ -68,4 +76,4 @@ function AddFile() {
     );
 }
 
-export default AddFile;
+export default AddCar;

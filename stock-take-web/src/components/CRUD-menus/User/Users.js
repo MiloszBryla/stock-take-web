@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
-import "../../styling/index.css"
+import "../../../styling/index.css"
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
