@@ -68,7 +68,7 @@ function Users() {
                         <td>{user.password}</td>
                         <td>
                             <ButtonGroup className={"button-group"}>
-                                <Button className={"editButton"} size="sm" color="danger" tag={Link} to={"/groups/" + user.id}>Edit</Button>
+                                <Button className={"editButton"} size="sm" color="danger" tag={Link} to={"/edit-user/" + user.id}>Edit</Button>
                                 <Button className={"deleteButton"} size="sm" color="danger" onClick={function(){ remove(user.id); refreshPage()}}>Delete</Button>
                             </ButtonGroup>
                         </td>
