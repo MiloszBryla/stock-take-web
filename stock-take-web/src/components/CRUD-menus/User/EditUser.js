@@ -34,10 +34,14 @@ function EditUser({match}) {
             body:
                 JSON.stringify({
                     id: user.id,
+                    firstName: data.firstName,
+                    lastName: data.lastName,
+                    address: data.address,
+                    email: data.email
 
                 }),
         }).then((response) => {
-            if(response.status === 204){
+            if(response.status === 200){
                 refreshPage();
                 console.log(response);
             } else{
@@ -52,7 +56,7 @@ function EditUser({match}) {
     return (
         <div>
 
-            <span><NavLink to={"/cars"} className={"previous"}>&laquo; Back</NavLink></span>
+            <span><NavLink to={"/users"} className={"previous"}>&laquo; Back</NavLink></span>
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <h4>Edit user:  {user.id}</h4>
@@ -60,22 +64,22 @@ function EditUser({match}) {
 
                 <div className="form-group">
                     <label htmlFor={"manufacturer"} className={"form-label"}>First Name</label><br/>
-                    <input type="text" className="form-control" name="firstName" ref={register} placeholder={user.firstName}/>
+                    <input type="text" className="form-control" name="firstName" ref={register} defaultValue={user.firstName}/>
                 </div>
 
                 <div className="form-group">
                     <label htmlFor={"model"} className={"form-label"}>Last Name</label><br/>
-                    <input type="text" className="form-control" name="lastName" ref={register} placeholder={user.lastName}/>
+                    <input type="text" className="form-control" name="lastName" ref={register} defaultValue={user.lastName}/>
                 </div>
 
                 <div className="form-group">
                     <label htmlFor={"registration"} className={"form-label"}>Address</label><br/>
-                    <input type="text" className="form-control" name="address" ref={register} placeholder={user.address}/>
+                    <input type="text" className="form-control" name="address" ref={register} defaultValue={user.address}/>
                 </div>
 
                 <div className="form-group">
                     <label htmlFor="isServiceRequired">Email</label><br/>
-                    <input type="text" className="form-control" name="email" ref={register} placeholder={user.email}/>
+                    <input type="text" className="form-control" name="email" ref={register} defaultValue={user.email}/>
                 </div>
 
 

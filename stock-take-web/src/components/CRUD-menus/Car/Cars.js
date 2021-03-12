@@ -38,7 +38,7 @@ function Cars() {
             <span><NavLink to={"/"} className={"previous"}>&laquo; Back</NavLink></span>
             <h4 className={"title"}>CARS</h4>
 
-            <NavLink to={"/add-car"} ><Button className={"addButton"} size="sm" >+</Button></NavLink>
+            <NavLink to={"/add-car"} ><Button className={"addButton"} size="sm" >Add new car</Button></NavLink>
 
             <table className="cars-list">
                 <tr>
