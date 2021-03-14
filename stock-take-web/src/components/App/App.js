@@ -25,8 +25,6 @@ function App() {
                     <Route path="/edit-car/:id" exact component = {EditCar}/>
                     <Route path="/edit-user/:id" exact component = {EditUser}/>
                     <Route path="/add-reservation" exact component = {AddReservation}/>
-
-
                     <Route path="*" exact component = {LandingPage}/>
 
                 </Switch>

@@ -2,12 +2,14 @@ import React, {useEffect, useState} from 'react';
 import "../../../styling/index.css"
 import {Link, NavLink} from "react-router-dom";
 import {useForm} from "react-hook-form";
+import { useHistory } from "react-router-dom";
 
 function EditCar({match}) {
 
     const [car, setCar] = useState([]);
     const [reservations, setReservations] = useState([]);
     const { register, handleSubmit } = useForm();
+    const history = useHistory();
 
 
 
@@ -55,8 +57,8 @@ function EditCar({match}) {
                 }),
         }).then((response) => {
             if(response.status === 204){
-                refreshPage();
                 console.log(response);
+                history.push("/cars");
             } else{
                 console.log("something went wrong");
             }

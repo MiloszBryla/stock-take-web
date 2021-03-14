@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import "../../../styling/index.css"
-import {NavLink} from "react-router-dom";
+import {NavLink, useHistory} from "react-router-dom";
 import {useForm} from "react-hook-form";
 
 
 function AddReservation() {
 
     const { register, handleSubmit } = useForm();
+    const history = useHistory();
 
     const onSubmit = (data) => {
         console.log(data)
@@ -20,8 +21,8 @@ function AddReservation() {
             body: JSON.stringify(data),
         }).then((response) => {
             if(response.status === 200){
-                refreshPage();
-                console.log(response)
+                console.log(response);
+                history.push("/reservations");
             } else{
                 refreshPage();
                 console.log("something went wrong");

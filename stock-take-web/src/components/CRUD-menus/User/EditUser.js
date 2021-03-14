@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import "../../../styling/index.css"
-import {Link, NavLink} from "react-router-dom";
+import {Link, NavLink, useHistory} from "react-router-dom";
 import {useForm} from "react-hook-form";
 
 function EditUser({match}) {
 
     const [user, setUser] = useState([]);
     const { register, handleSubmit } = useForm();
+    const history = useHistory();
 
 
 
@@ -42,8 +43,8 @@ function EditUser({match}) {
                 }),
         }).then((response) => {
             if(response.status === 200){
-                refreshPage();
                 console.log(response);
+                history.push("/users");
             } else{
                 console.log("something went wrong");
             }

@@ -1,6 +1,6 @@
 import React from 'react';
 import "../../../styling/index.css"
-import {NavLink} from "react-router-dom";
+import {NavLink, useHistory} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {Button} from "reactstrap";
 
@@ -8,6 +8,7 @@ import {Button} from "reactstrap";
 function AddUser() {
 
     const { register, handleSubmit } = useForm();
+    const history = useHistory();
 
     const onSubmit = (data) => {
         console.log(data)
@@ -21,11 +22,11 @@ function AddUser() {
             body: JSON.stringify(data),
         }).then((response) => {
             if(response.status === 200){
-                refreshPage();
-                console.log(response)
+                console.log(response);
+                history.push("/users");
             } else{
-                refreshPage();
                 console.log("something went wrong");
+                history.push("/users");
             }
         })
     }
